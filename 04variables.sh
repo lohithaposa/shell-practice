@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#Arguments Passing through special variables :$1, $2
 PERSON1=$1
 PERSON2=$2
 echo "$PERSON1:: Hi $PERSON2"
