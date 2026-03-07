@@ -28,9 +28,9 @@ dnf install nginx -y &>> $LOGS_FILE #&  means success or failure output it will 
 VALIDATE $? "Installing Nginx"
 
 dnf install mysql -y &>> $LOGS_FILE
-VALIDATE $? "Installing Nginx"
+VALIDATE $? "Installing mysql"
 
 dnf install nodejs -y &>> $LOGS_FILE
-VALIDATE $? "Installing Nginx"
+VALIDATE $? "Installing nodejs"
 
 
