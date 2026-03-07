@@ -4,11 +4,14 @@
 
 
 USERID=$(id -u)
+LOGS_FOLDER="/var/log/shell-script"
 if [ $USERID -ne 0 ]; then
   echo "Please run the script with root access"
   exit 1
 fi
- #By default shell will not execute Validate function when we call the function then it will execute the function
+
+
+#By default shell will not execute Validate function when we call the function then it will execute the function
 VALIDATE(){
    if [ $1 -ne 0 ]; then
      echo "$2 failure"
