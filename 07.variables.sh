@@ -10,4 +10,4 @@ echo "script name : $0"
 echo "process id of recently excecuted background process: $!"
 echo "who is running the script: $USER" 
 
-cho "All arguments passed to the script : $*"
+echo "All arguments passed to the script : $*"
