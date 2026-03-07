@@ -1,5 +1,5 @@
 #!/bin/bash
-id -u = to get user id
+#id -u = to get user id
 
 
 USERID=$(id -u)
