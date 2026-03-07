@@ -1,5 +1,6 @@
 #!/bin/bash
 #id -u = to get user id
+# root user id = 0
 
 
 USERID=$(id -u)
