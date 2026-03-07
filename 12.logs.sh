@@ -19,7 +19,7 @@ VALIDATE(){
      echo "$2 failure" | tee -a $LOGS_FILE # -a is appending,not to overide to append
      exit 1
    else
-     echo "$2 success" | | tee -a $LOGS_FILE
+     echo "$2 success"  | tee -a $LOGS_FILE
    fi  
 
 }
