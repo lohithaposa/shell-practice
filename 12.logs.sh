@@ -16,15 +16,15 @@ mkdir -p $LOGS_FOLDER
 #By default shell will not execute Validate function when we call the function then it will execute the function
 VALIDATE(){
    if [ $1 -ne 0 ]; then
-     echo "$2 failure"
+     echo "$2 failure" | tee -a $LOGS_FILE # -a is appending,not to overide to append
      exit 1
    else
-     echo "$2 success"
+     echo "$2 success" | | tee -a $LOGS_FILE
    fi  
 
 }
 
-dnf install nginx -y &>> $LOGS_FILE #&  means success or failure output it will redirect to logsfile
+dnf install nginx -y &>> $LOGS_FILE #&  means success or failure output it will redirect to logsfile.2. It will not print on the screen it will store in the file
 VALIDATE $? "Installing Nginx"
 
 dnf install mysql -y &>> $LOGS_FILE
