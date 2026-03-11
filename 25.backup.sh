@@ -9,7 +9,7 @@ B="\e[34m"
 N="\e[0m"
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=${3:-14}
+DAYS=${3:-14} #$3 → the 3rd argument passed to the script ....14 → default value if the 3rd argument is not provided
 if [ $USERID -ne 0 ]; then
    echo -e " $R Please run with root user $N"
 fi
@@ -19,7 +19,10 @@ mkdir -p $LOGS_FOLDER
 USAGE(){
    echo -e "$R USAGE:: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14 days] $N"
    exit 1
+}
 
+log(){
+    echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
 }
 
 if [ $# -lt 2 ]; then
@@ -35,4 +38,13 @@ if [ ! -d "$DEST_DIR" ]; then
    log "$R Destination Directory:  $DEST_DIR does not exist $N"
    exit 1
 fi
+
+### Find the files
+FILES=$(find "$SOURCE_DIR" -name "*.log" -type f -mtime +$DAYS)
+
+log "Backup started"
+log "Source Directory: $SOURCE_DIR"
+log "Destination Directory: $DEST_DIR"
+log "Days: $DAYS
+
 
