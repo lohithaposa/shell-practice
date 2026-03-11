@@ -11,5 +11,5 @@ count=1
 
 while IFS= read -r line; do
  echo "$line"
-
-done < ./21.script.sh #input which file to read
+#done < ./21.script.sh #input which file to read
+done <<< $FILES_TO_DELETE 
