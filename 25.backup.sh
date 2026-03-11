@@ -18,21 +18,21 @@ mkdir -p $LOGS_FOLDER
 
 USAGE(){
    echo -e "$R USAGE:: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14 days] $N"
-    exit 1
+   exit 1
 
 }
 
 if [ $# -lt 2 ]; then
-    USAGE
+   USAGE
 fi
 
 if [ ! -d "$SOURCE_DIR" ]; then
-    log "$R Source Directory: $SOURCE_DIR does not exist $N"
-    exit 1
+   log "$R Source Directory: $SOURCE_DIR does not exist $N"
+   exit 1
 fi
 
 if [ ! -d "$DEST_DIR" ]; then
-    log "$R Destination Directory:  $DEST_DIR does not exist $N"
-    exit 1
+   log "$R Destination Directory:  $DEST_DIR does not exist $N"
+   exit 1
 fi
 
