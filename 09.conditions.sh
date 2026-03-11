@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ #if , elif,
 NUMBER=$1
 
 if [ $NUMBER -gt 20 ]; then
