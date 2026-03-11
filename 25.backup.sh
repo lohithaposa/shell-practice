@@ -7,7 +7,9 @@ G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
-
+SOURCE_DIR=$1
+DES_DIR=$2
+DAYS=$(3:-14)
 if [ $USERID -ne 0 ]; then
    echo -e " $R Please run with root user $N"
 fi
@@ -15,12 +17,22 @@ fi
 mkdir -p $LOGS_FOLDER
 
 USAGE(){
-   echo "  $R sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14 days] $N"
+   echo " $R USAGE:: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14 days] $N"
     exit 1
 
 }
 
 if [ $# -lt 2 ]; then
     USAGE
+fi
+
+if [ ! -d "$SOURCE_DIR" ]; then
+    log "$R Source Directory: $SOURCE_DIR does not exist $N"
+    exit 1
+fi
+
+if [ ! -d "$DEST_DIR" ]; then
+    log "$R Destination Directory:  $DEST_DIR does not exist $N"
+    exit 1
 fi
 
