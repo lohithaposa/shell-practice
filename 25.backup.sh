@@ -9,7 +9,7 @@ B="\e[34m"
 N="\e[0m"
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=$(3:-14)
+DAYS=${3:-14}
 if [ $USERID -ne 0 ]; then
    echo -e " $R Please run with root user $N"
 fi
