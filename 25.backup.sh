@@ -8,7 +8,7 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 SOURCE_DIR=$1
-DES_DIR=$2
+DEST_DIR=$2
 DAYS=$(3:-14)
 if [ $USERID -ne 0 ]; then
    echo -e " $R Please run with root user $N"
@@ -17,7 +17,7 @@ fi
 mkdir -p $LOGS_FOLDER
 
 USAGE(){
-   echo " $R USAGE:: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14 days] $N"
+   echo -e "$R USAGE:: sudo backup <SOURCE_DIR> <DEST_DIR> <DAYS>[default 14 days] $N"
     exit 1
 
 }
