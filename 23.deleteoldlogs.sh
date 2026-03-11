@@ -17,4 +17,4 @@ echo "$FILES_TO_DELETE"
 
 while IFS= read -r line; do
  echo "$line"
- done <<< $FILES_TO_DELETE
+done <<< $FILES_TO_DELETE
